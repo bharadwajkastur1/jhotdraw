@@ -66,7 +66,6 @@ public class JLifeFormattedTextField extends JFormattedTextField {
      */
     public JLifeFormattedTextField() {
     }
-// TODO: Non-null value is always initialized
     @Override
     public void setDocument(Document newValue) {
         Document oldValue = getDocument();
@@ -77,9 +76,8 @@ public class JLifeFormattedTextField extends JFormattedTextField {
         if (oldValue != null) {
             oldValue.removeDocumentListener(documentHandler);
         }
-        if (newValue != null) {
-            newValue.addDocumentListener(documentHandler);
-        }
+        newValue.addDocumentListener(documentHandler);
+        
         updateValue();
     }
 
