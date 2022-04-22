@@ -174,7 +174,7 @@ public class BezierTool extends AbstractTool {
     protected Figure getAddedFigure() {
         return createdFigure;
     }
-
+//FIXME: fix the condition which is always true
     protected void addPointToFigure(Point2D.Double newPoint) {
         int pointCount = createdFigure.getNodeCount();
         createdFigure.willChange();
