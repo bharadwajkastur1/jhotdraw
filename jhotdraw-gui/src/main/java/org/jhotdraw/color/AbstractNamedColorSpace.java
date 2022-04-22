@@ -34,10 +34,8 @@ public abstract class AbstractNamedColorSpace extends ColorSpace implements Name
     public final float[] toRGB(float[] colorvalue) {
         return toRGB(colorvalue, new float[3]);
     }
-//FIXME: variable not utilized
     @Override
     public float[] fromRGB(float[] rgb) {
-        float[] tmp = new float[getNumComponents()];
         return fromRGB(rgb, new float[getNumComponents()]);
     }
 
