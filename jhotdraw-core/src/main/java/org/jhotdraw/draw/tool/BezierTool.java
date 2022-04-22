@@ -174,7 +174,6 @@ public class BezierTool extends AbstractTool {
     protected Figure getAddedFigure() {
         return createdFigure;
     }
-//FIXME: fix the condition which is always true
     protected void addPointToFigure(Point2D.Double newPoint) {
         int pointCount = createdFigure.getNodeCount();
         createdFigure.willChange();
@@ -185,7 +184,7 @@ public class BezierTool extends AbstractTool {
             Point2D.Double secondLastPoint = (pointCount <= 1) ? endPoint : createdFigure.getPoint(pointCount - 2, 0);
             if (newPoint.equals(endPoint)) {
                 // nothing to do
-            } else if (pointCount > 1 && Geom.lineContainsPoint(newPoint.x, newPoint.y, secondLastPoint.x, secondLastPoint.y, endPoint.x, endPoint.y, 0.9f / getView().getScaleFactor())) {
+            } else if (Geom.lineContainsPoint(newPoint.x, newPoint.y, secondLastPoint.x, secondLastPoint.y, endPoint.x, endPoint.y, 0.9f / getView().getScaleFactor())) {
                 createdFigure.setPoint(pointCount - 1, 0, newPoint);
             } else {
                 createdFigure.addNode(new BezierPath.Node(newPoint));
