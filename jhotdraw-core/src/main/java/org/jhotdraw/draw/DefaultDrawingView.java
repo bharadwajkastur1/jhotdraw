@@ -70,8 +70,7 @@ public class DefaultDrawingView
     private DrawingEditor editor;
     private JLabel emptyDrawingLabel;
     protected BufferedImage backgroundTile;
-    //TODO: Change the field type
-    private FigureListener handleInvalidator = new FigureAdapter() {
+    private transient FigureListener handleInvalidator = new FigureAdapter() {
         @Override
         public void figureHandlesChanged(FigureEvent e) {
             invalidateHandles();
