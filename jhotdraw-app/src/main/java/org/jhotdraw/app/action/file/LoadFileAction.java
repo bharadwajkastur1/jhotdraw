@@ -143,7 +143,7 @@ public class LoadFileAction extends AbstractSaveUnsavedChangesAction {
                     failed(ex);
                 }
             }
-
+            //FIXME: REdundant null check at line 153 
             protected void failed(Throwable value) {
                 value.printStackTrace();
                 ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
