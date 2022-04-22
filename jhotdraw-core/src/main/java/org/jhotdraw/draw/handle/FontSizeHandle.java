@@ -126,7 +126,6 @@ public class FontSizeHandle extends LocatorHandle {
         };
         fireUndoableEditHappened(edit);
     }
-//FIXME: float values
     @Override
     public void keyPressed(KeyEvent evt) {
         final TextHolderFigure textOwner = (TextHolderFigure) getOwner();
@@ -155,7 +154,6 @@ public class FontSizeHandle extends LocatorHandle {
             textOwner.setFontSize(newSize);
             textOwner.changed();
             final Object editRestoreData = restoreData;
-            final float editNewSize = newSize;
             UndoableEdit edit = new AbstractUndoableEdit() {
                 private static final long serialVersionUID = 1L;
 
