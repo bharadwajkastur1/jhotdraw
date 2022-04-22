@@ -194,7 +194,7 @@ public class DefaultHandleTracker extends AbstractTool implements HandleTracker 
         updateHoverHandles(view, null);
         dragLocation = null;
     }
-
+// FIXME: multiple null check 
     @Override
     public void mouseMoved(MouseEvent evt) {
         Point point = evt.getPoint();
