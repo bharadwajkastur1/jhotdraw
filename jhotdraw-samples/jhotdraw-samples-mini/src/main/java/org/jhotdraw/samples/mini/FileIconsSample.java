@@ -33,7 +33,8 @@ public class FileIconsSample {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
-            @Override
+            //TODO: add a null pointer exception
+        	@Override
             public void run() {
                 // Let the user choose a directory
                 JFileChooser fc = new JFileChooser();
