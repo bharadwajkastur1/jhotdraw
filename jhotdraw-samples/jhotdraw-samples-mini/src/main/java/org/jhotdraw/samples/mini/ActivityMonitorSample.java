@@ -254,7 +254,8 @@ private void startPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s
     pm.setCancelable(cancelableCheckBox.isSelected());
     pm.setNote("Waiting for processor");
     Runnable r = new Runnable() {
-        @Override
+        //TODO: fix the conditioning statement
+    	@Override
         public void run() {
             try {
                 pm.setNote("Working...");
