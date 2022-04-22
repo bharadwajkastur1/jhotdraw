@@ -100,14 +100,13 @@ public class DefaultSelectAreaTracker extends AbstractTool implements SelectArea
         }
         fireAreaInvalidated(invalidatedArea);
     }
-// TODO: remove multiple null check
     @Override
     public void mouseMoved(MouseEvent evt) {
         clearRubberBand();
         Point point = evt.getPoint();
         DrawingView view = editor.findView((Container) evt.getSource());
         updateCursor(view, point);
-        if (view == null || editor.getActiveView() != view) {
+        if ( editor.getActiveView() != view) {
             clearHoverHandles();
         } else {
             // Search first, if one of the selected figures contains
