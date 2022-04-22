@@ -143,14 +143,13 @@ public class LoadFileAction extends AbstractSaveUnsavedChangesAction {
                     failed(ex);
                 }
             }
-            //FIXME: REdundant null check at line 153 
             protected void failed(Throwable value) {
                 value.printStackTrace();
                 ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
                 JSheet.showMessageSheet(view.getComponent(),
                         "<html>" + UIManager.getString("OptionPane.css")
                         + "<b>" + labels.getFormatted("file.load.couldntLoad.message", URIUtil.getName(uri)) + "</b><p>"
-                        + ((value == null) ? "" : value),
+                        + (value),
                         JOptionPane.ERROR_MESSAGE, new SheetListener() {
                     @Override
                     public void optionSelected(SheetEvent evt) {
