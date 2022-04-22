@@ -126,7 +126,7 @@ public class FontSizeHandle extends LocatorHandle {
         };
         fireUndoableEditHappened(edit);
     }
-
+//FIXME: float values
     @Override
     public void keyPressed(KeyEvent evt) {
         final TextHolderFigure textOwner = (TextHolderFigure) getOwner();
