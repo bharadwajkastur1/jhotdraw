@@ -194,14 +194,13 @@ public class DefaultHandleTracker extends AbstractTool implements HandleTracker 
         updateHoverHandles(view, null);
         dragLocation = null;
     }
-// FIXME: multiple null check 
     @Override
     public void mouseMoved(MouseEvent evt) {
         Point point = evt.getPoint();
         updateCursor(editor.findView((Container) evt.getSource()), point);
         DrawingView view = editor.findView((Container) evt.getSource());
         updateCursor(view, point);
-        if (view == null || editor.getActiveView() != view) {
+        if (editor.getActiveView() != view) {
             clearHoverHandles();
         } else {
             // Search first, if one of the selected figures contains
