@@ -33,7 +33,6 @@ public class FileIconsSample {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
-            //TODO: add a null pointer exception
         	@Override
             public void run() {
                 // Let the user choose a directory
@@ -45,10 +44,11 @@ public class FileIconsSample {
                 }
                 // Create a drawing
                 Drawing drawing = new DefaultDrawing();
-                // Add a figure for each file to the drawing
                 File dir = fc.getSelectedFile();
                 File[] files = dir.listFiles();
                 FileSystemView fsv = FileSystemView.getFileSystemView();
+                try
+                {
                 int maxColumn = Math.max((int) Math.sqrt(files.length), 1);
                 double tx = 0;
                 double ty = 0;
@@ -101,6 +101,11 @@ public class FileIconsSample {
                     gcf.transform(at);
                     tx += b.width + 20;
                     drawing.add(gcf);
+                }
+                }
+                catch(NullPointerException e)
+                {
+                    System.out.print("NullPointerException Caught");
                 }
                 // Show the drawing
                 JFrame f = new JFrame("Contents of directory " + dir.getName());
