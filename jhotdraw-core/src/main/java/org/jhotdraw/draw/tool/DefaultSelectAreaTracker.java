@@ -100,7 +100,7 @@ public class DefaultSelectAreaTracker extends AbstractTool implements SelectArea
         }
         fireAreaInvalidated(invalidatedArea);
     }
-
+// TODO: remove multiple null check
     @Override
     public void mouseMoved(MouseEvent evt) {
         clearRubberBand();
